@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class ReviewDto {
     private String reservationNumber;
     private String userName;
+    private String storeName;
     private String reviewText;
     private int rating;
 }

@@ -35,7 +35,6 @@ public class Reservation {
         this.birth = reservationDto.getBirth();
         this.reservationDate = reservationDto.getReservationDate();
         this.reservationTime = reservationDto.getReservationTime();
-        this.reservationNumber = UUID.randomUUID().toString();
         this.status = ReservationStatus.PENDING;
     }
 
