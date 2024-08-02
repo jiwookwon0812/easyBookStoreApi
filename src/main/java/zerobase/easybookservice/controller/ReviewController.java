@@ -1,6 +1,7 @@
 package zerobase.easybookservice.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import zerobase.easybookservice.dto.ReviewDto;
 import zerobase.easybookservice.service.ReviewService;
@@ -15,6 +16,7 @@ public class ReviewController {
 
     // 리뷰 작성 api (예약 상태가 visited 인 상태일 때만 리뷰 작성 가능)
     @PostMapping("/write")
+    @PreAuthorize("hasRole('USER')")
     public ReviewDto writeReview(@RequestBody ReviewDto reviewDto) {
         return reviewService.writeReview(reviewDto);
     }
