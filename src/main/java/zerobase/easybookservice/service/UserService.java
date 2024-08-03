@@ -63,6 +63,4 @@ public class UserService implements UserDetailsService {
         // 이를 다시 List<String> 으로 변환
         return new UserDto.SignInResponse(user.getUsername(), user.getEmail(), authorities);
     }
-
-
 }
