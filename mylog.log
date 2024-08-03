@@ -976,3 +976,6 @@
 02:31:58.016 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
 02:31:58.016 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
 02:31:58.016 [http-nio-8080-exec-2] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+03:31:15.892 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+03:31:15.892 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+03:31:15.906 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
