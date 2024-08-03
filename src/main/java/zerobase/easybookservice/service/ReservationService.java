@@ -1,11 +1,17 @@
 package zerobase.easybookservice.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import zerobase.easybookservice.domain.Reservation;
 import zerobase.easybookservice.domain.constant.ReservationStatus;
 import zerobase.easybookservice.dto.ReservationDto;
+import zerobase.easybookservice.exception.impl.AlreadyExistReservationException;
+import zerobase.easybookservice.exception.impl.NoReservationException;
+import zerobase.easybookservice.exception.impl.NoStoreException;
+import zerobase.easybookservice.exception.impl.NotApprovedReservationException;
 import zerobase.easybookservice.repository.ReservationRepository;
 import zerobase.easybookservice.repository.StoreRepository;
 
@@ -21,20 +27,33 @@ public class ReservationService {
     @Transactional
     public ReservationDto reserveStore(ReservationDto reservationDto) {
         Reservation reservation;
+
+        // 로그인한 사용자 이메일을 가져옴
+        String email =getCurrentUserEmail();
         confirmReservation(reservationDto);
         // 예약 조건 만족 시
-        reservation = new Reservation(reservationDto);
+        reservation = new Reservation(reservationDto, email);
         reservationRepository.save(reservation);
         reservation.generateReservationNumber(); // 처음 저장할 때 id 엔티티가 할당되기 때문에
         // 한번 더 저장해주기
+        reservationRepository.save(reservation);
         return reservationDto;
+    }
+
+    private String getCurrentUserEmail() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            return ((UserDetails) principal).getUsername();
+        } else {
+            return principal.toString();
+        }
     }
 
     // 상점 예약 시 확인 조건 (?)
     public void confirmReservation(ReservationDto reservationDto) {
         // 1. 해당 상점 이름과 위치에 맞는 상점이 있어야 함
         if (!storeRepository.existsByNameAndLocation(reservationDto.getStoreName(), reservationDto.getStoreLocation())) {
-            throw new RuntimeException("Store not found");
+            throw new NoStoreException();
         }
         // 2. 중복 예약 안됨
         if (reservationRepository
@@ -43,47 +62,51 @@ public class ReservationService {
                                 , reservationDto.getStoreLocation()
                                 , reservationDto.getReservationDate()
                                 , reservationDto.getReservationTime())) {
-            throw new RuntimeException("Reservation already exists in this time");
+            throw new AlreadyExistReservationException();
         }
     }
 
     // 예약 조회 (예약자 이름으로)
     @Transactional(readOnly = true)
-    public List<ReservationDto> searchReservations(String name, String birth) {
+    public List<ReservationDto> searchReservations(String name) {
         List<ReservationDto> reservationDtos;
         List<Reservation> reservations;
 
-        if (!reservationRepository.existsByUserNameAndBirth(name, birth)) { // 예약자 이름과 생년월일로 조회 시 예약정보 X 때
-            throw new RuntimeException("Reservation not found");
+        String email = getCurrentUserEmail();
+
+        if (!reservationRepository.existsByUserNameAndEmail(name, email)) { // 예약자 이름과 로그인한 이메일로 조회 시 예약정보 X 때
+            throw new NoReservationException();
         }
 
         // 예약정보 조회 성공시
-        reservations = reservationRepository.findByUserNameAndBirth(name, birth);
+        reservations = reservationRepository.findByUserNameAndEmail(name, email);
 
         reservationDtos = reservations.stream()
                 .map(e -> new ReservationDto(e.getStoreName(), e.getStoreLocation(), e.getUserName(),
-                        e.getBirth(), e.getReservationDate(), e.getReservationTime(), e.getReservationNumber(), e.getStatus().toString()))
+                         e.getReservationDate(), e.getReservationTime(), e.getReservationNumber(), e.getStatus().toString()))
                 .toList();
         return reservationDtos;
     }
 
     // 예약 삭제
     @Transactional
-    public void deleteReservation(String userName, String birth, String storeName) {
+    public void deleteReservation(String userName, String storeName) {
         List<Reservation> reservations;
+
+        String email = getCurrentUserEmail();
 
         // 1. storeName null 일 때 -> 해당 이용자의 모든 예약 삭제
         if (storeName == null) {
-            reservations = reservationRepository.findByUserNameAndBirth(userName, birth);
+            reservations = reservationRepository.findByUserNameAndEmail(userName, email);
             if (reservations.isEmpty()) {
-                throw new RuntimeException("Reservation not found");
+                throw new NoReservationException();
             }
             reservationRepository.deleteAll(reservations);
         } else {
             // 2. storeName 으로 특정 예약 삭제
-            reservations = reservationRepository.findByStoreNameAndUserNameAndBirth(storeName, userName, birth);
+            reservations = reservationRepository.findByStoreNameAndUserNameAndEmail(storeName, userName, email);
             if (reservations.isEmpty()) {
-                throw new RuntimeException("Reservation not found");
+                throw new NoReservationException();
             }
             reservationRepository.deleteAll(reservations);
         }
@@ -94,7 +117,7 @@ public class ReservationService {
     public void approveReservation(String reservationNumber) {
         Reservation reservation;
         reservation = reservationRepository.findByReservationNumber(reservationNumber)
-                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+                .orElseThrow(() -> new NoReservationException());
         reservation.approve();
         reservationRepository.save(reservation);
     }
@@ -104,7 +127,7 @@ public class ReservationService {
     public void rejectReservation(String reservationNumber) {
         Reservation reservation;
         reservation = reservationRepository.findByReservationNumber(reservationNumber)
-                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+                .orElseThrow(() -> new NoReservationException());
         reservation.reject();
         reservationRepository.save(reservation);
     }
@@ -114,9 +137,9 @@ public class ReservationService {
     public void confirmVisited(String reservationNumber, String userName) {
         Reservation reservation;
         reservation = reservationRepository.findByUserNameAndReservationNumber(userName, reservationNumber)
-                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+                .orElseThrow(() -> new NoReservationException());
         if (reservation.getStatus() != ReservationStatus.APPROVED) {
-            throw new RuntimeException("Reservation is not approved");
+            throw new NotApprovedReservationException();
         } // 예약 승인 된 건에 한해서만 방문 확인 가능
 
         reservation.visited(); // 방문 확인 !!

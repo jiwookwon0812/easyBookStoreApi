@@ -28,8 +28,19 @@ public class ReviewController {
     }
 
     // 내 리뷰 조회 api
+    @GetMapping("/search")
+    @PreAuthorize("hasRole('USER')")
+    public List<ReviewDto> searchMyReviews(@RequestParam(required = false) String storeName) {
+        // store name 없으면 나의 모든 리뷰 조회
+        return reviewService.searchMyReviews(storeName);
+    }
 
     // 리뷰 삭제 api
+    @DeleteMapping("/delete")
+    @PreAuthorize("hasRole('USER')")
+    public void deleteReview(@RequestParam String storeName) {
+        reviewService.deleteReview(storeName);
+    }
 
 
 }

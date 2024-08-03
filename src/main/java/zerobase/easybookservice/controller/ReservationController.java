@@ -24,19 +24,17 @@ public class ReservationController {
     // 예약 조회
     @GetMapping("/search")
     @PreAuthorize("hasRole('USER')")
-    public List<ReservationDto> searchReservations(@RequestParam String userName,
-                                                   @RequestParam String birth) {
-        return reservationService.searchReservations(userName, birth);
+    public List<ReservationDto> searchReservations(@RequestParam String userName) {
+        return reservationService.searchReservations(userName);
     }
 
     // 예약 삭제
     @DeleteMapping("/delete")
     @PreAuthorize("hasRole('USER')")
     public void DeleteReservation(@RequestParam String userName,
-                                  @RequestParam String birth,
                                   @RequestParam(required = false) String storeName) {
         // storeName 없으면 그냥 예약자가 예약한 모든 예약 삭제
-        reservationService.deleteReservation(userName, birth, storeName);
+        reservationService.deleteReservation(userName, storeName);
     }
 
     // 예약 승인 (점장이) (예약 번호 입력해서)
@@ -56,7 +54,7 @@ public class ReservationController {
 
     // 방문 확인 api (예약 상태가 approve 인 상태일 때만 진행 가능) (고객이)
     @PutMapping("visited/{reservationNumber}")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('ADMIN')")
     public void confirmVisited(@PathVariable String reservationNumber,
                                @RequestParam String userName) {
         reservationService.confirmVisited(reservationNumber, userName);

@@ -19,13 +19,15 @@ public class Review {
     private Long id;
     private String reservationNumber;
     private String userName;
+    private String email;
     private String storeName;
     private String reviewText;
     private int rating; // 별점
 
-    public Review(ReviewDto reviewDto) {
+    public Review(ReviewDto reviewDto, String email) {
         this.reservationNumber = reviewDto.getReservationNumber();
         this.userName = reviewDto.getUserName();
+        this.email = email;
         this.storeName = reviewDto.getStoreName();
         this.reviewText = reviewDto.getReviewText();
         this.rating = reviewDto.getRating();

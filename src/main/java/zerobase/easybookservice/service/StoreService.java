@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import zerobase.easybookservice.domain.Store;
 import zerobase.easybookservice.dto.StoreDto;
-import zerobase.easybookservice.repository.ReservationRepository;
-import zerobase.easybookservice.repository.ReviewRepository;
+import zerobase.easybookservice.exception.impl.AlreadyExistStoreException;
+import zerobase.easybookservice.exception.impl.NoStoreException;
 import zerobase.easybookservice.repository.StoreRepository;
 
 
@@ -17,15 +17,13 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class StoreService {
     private final StoreRepository storeRepository;
-    private final ReservationRepository reservationRepository;
-    private final ReviewRepository reviewRepository;
 
     // 상점 등록
     @Transactional
     public StoreDto registerStore(StoreDto storeDto) {
         boolean exists = storeRepository.existsByNameAndLocation(storeDto.getName(), storeDto.getLocation());
         if (exists) {
-            throw new RuntimeException("Store already exists");
+            throw new AlreadyExistStoreException();
         }
 
         storeRepository.save(new Store(storeDto));
@@ -36,7 +34,7 @@ public class StoreService {
     @Transactional
     public void deleteStoreByName(String name, String location) {
         Store store = storeRepository.findByNameAndLocation(name, location)
-                .orElseThrow(() -> new RuntimeException("Store not found"));
+                .orElseThrow(() -> new NoStoreException());
         storeRepository.delete(store);
     }
 
@@ -48,7 +46,7 @@ public class StoreService {
         if (name == null && location == null) { // 전체 상점 조회
             stores = storeRepository.findAll();
             if (stores.isEmpty()) {
-                throw new RuntimeException("No stores found");
+                throw new NoStoreException();
             }
             storeDtos = stores.stream()
                     .map(e -> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))
@@ -57,7 +55,7 @@ public class StoreService {
         } else if (name == null && location != null) { // 이름 없고 위치만 입력 했을 때
             stores = storeRepository.findAllByLocation(location);
             if (stores.isEmpty()) {
-                throw new RuntimeException("No stores found");
+                throw new NoStoreException();
             }
             storeDtos = stores.stream()
                     .map(e -> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))
@@ -66,7 +64,7 @@ public class StoreService {
         } else if (name != null && location == null) { // 이름만 입력
             stores = storeRepository.findAllByName(name);
             if (stores.isEmpty()) {
-                throw new RuntimeException("No stores found");
+                throw new NoStoreException();
             }
             storeDtos = stores.stream()
                     .map(e -> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))
@@ -75,7 +73,7 @@ public class StoreService {
         } else { // 이름, 위치 모두 입력
             Optional<Store> store = storeRepository.findByNameAndLocation(name, location);
             if (store.isEmpty()) {
-                throw new RuntimeException("Store not found");
+                throw new NoStoreException();
             }
             storeDtos = store.stream()
                     .map(e-> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))

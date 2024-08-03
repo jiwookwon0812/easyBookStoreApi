@@ -1,16 +1,18 @@
 package zerobase.easybookservice.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import zerobase.easybookservice.domain.Reservation;
 import zerobase.easybookservice.domain.Review;
-import zerobase.easybookservice.domain.Store;
 import zerobase.easybookservice.domain.constant.ReservationStatus;
 import zerobase.easybookservice.dto.ReviewDto;
+import zerobase.easybookservice.exception.impl.NoReservationException;
+import zerobase.easybookservice.exception.impl.NotVisitedReservationException;
 import zerobase.easybookservice.repository.ReservationRepository;
 import zerobase.easybookservice.repository.ReviewRepository;
-import zerobase.easybookservice.repository.StoreRepository;
 
 import java.util.List;
 
@@ -27,14 +29,15 @@ public class ReviewService {
 
         String reservationNumber = reviewDto.getReservationNumber();
         String userName = reviewDto.getUserName();
+        String email = getCurrentUserEmail();
         reservation = reservationRepository.findByUserNameAndReservationNumber(userName, reservationNumber)
-                .orElseThrow(() -> new RuntimeException("Reservation not found"));
+                .orElseThrow(() -> new NoReservationException());
 
         if (reservation.getStatus() != ReservationStatus.VISITED) {
-            throw new RuntimeException("You can write review after visit store");
+            throw new NotVisitedReservationException();
         } // 방문 확인 후 리뷰 작성 가능
 
-        Review review = new Review(reviewDto);
+        Review review = new Review(reviewDto, email);
         reviewRepository.save(review);
         return reviewDto;
     }
@@ -53,8 +56,46 @@ public class ReviewService {
     }
 
     // 내 리뷰 조회 <- 아이디로?
+    @Transactional(readOnly = true)
+    public List<ReviewDto> searchMyReviews(String storeName) {
+        List<ReviewDto> reviewDtos;
+        List<Review> reviews;
+        String email = getCurrentUserEmail();
+
+        if (storeName == null) {
+            reviews = reviewRepository.findByEmail(email);
+            reviewDtos = reviews.stream()
+                    .map(e -> new ReviewDto(e.getReservationNumber(),
+                            e.getUserName(),
+                            e.getStoreName(),
+                            e.getReviewText(),
+                            e.getRating())).toList();
+            return reviewDtos;
+        } else {
+            reviews = reviewRepository.findByStoreNameAndEmail(storeName, email);
+            reviewDtos = reviews.stream().map(e -> new ReviewDto(e.getReservationNumber(),
+                    e.getUserName(), e.getStoreName(), e.getReviewText(), e.getRating()))
+                    .toList();
+            return reviewDtos;
+        }
+    }
+
+    private String getCurrentUserEmail() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            return ((UserDetails) principal).getUsername();
+        } else {
+            return principal.toString();
+        }
+    }
 
 
     // 리뷰 삭제 <- 이것도 아이디로?
+    public void deleteReview(String storeName) {
+        String email = getCurrentUserEmail();
+        List<Review> reviews = reviewRepository.findByStoreNameAndEmail(storeName, email);
+        reviewRepository.deleteAll(reviews);
+    }
+
 
 }

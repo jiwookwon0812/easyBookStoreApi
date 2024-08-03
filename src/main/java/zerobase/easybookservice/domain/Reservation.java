@@ -20,7 +20,7 @@ public class Reservation {
     private String storeName; // 예약할 매장 이름
     private String storeLocation; // 예약할 매장 위치
     private String userName; // 예약자 이름
-    private String birth; // 예약자 생년월일
+    private String email; // 예약자 이메일
     private String reservationDate; // 예약 날짜 (YYYY-MM-DD) 형식
     private String reservationTime; // 예약 시간 (정각 마다 예약 받기로 가정)
     private String reservationNumber; // 랜덤으로 예약 번호
@@ -28,11 +28,11 @@ public class Reservation {
     @Enumerated(EnumType.STRING)
     private ReservationStatus status;
 
-    public Reservation(ReservationDto reservationDto) {
+    public Reservation(ReservationDto reservationDto, String userEmail) {
         this.storeName = reservationDto.getStoreName();
         this.storeLocation = reservationDto.getStoreLocation();
         this.userName = reservationDto.getUserName();
-        this.birth = reservationDto.getBirth();
+        this.email = userEmail;
         this.reservationDate = reservationDto.getReservationDate();
         this.reservationTime = reservationDto.getReservationTime();
         this.status = ReservationStatus.PENDING;

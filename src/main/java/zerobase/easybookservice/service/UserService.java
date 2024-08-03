@@ -9,6 +9,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import zerobase.easybookservice.domain.User;
 import zerobase.easybookservice.dto.UserDto;
+import zerobase.easybookservice.exception.impl.AlreadyExistUserException;
+import zerobase.easybookservice.exception.impl.InvalidPasswordException;
+import zerobase.easybookservice.exception.impl.NoUserException;
 import zerobase.easybookservice.repository.UserRepository;
 
 import java.util.List;
@@ -30,7 +33,7 @@ public class UserService implements UserDetailsService {
     public UserDto.SignUp register(UserDto.SignUp userDto) {
         User user;
         if (userRepository.existsByEmail(userDto.getEmail())) {
-            throw new RuntimeException("Already exists");
+            throw new AlreadyExistUserException();
         }
 
         String encodingPassword = passwordEncoder.encode(userDto.getPassword());
@@ -46,11 +49,11 @@ public class UserService implements UserDetailsService {
     public UserDto.SignInResponse authenticate(UserDto.SignIn userDto) {
         // id 존재하는지 확인
         User user = userRepository.findByEmail(userDto.getEmail())
-                .orElseThrow(() -> new RuntimeException("could not find user ->" + userDto.getEmail()));
+                .orElseThrow(() -> new NoUserException());
 
         // id 와 비밀번호 일치하는지 확인
         if (!passwordEncoder.matches(userDto.getPassword(), user.getPassword())) {
-            throw new RuntimeException("password does not match");
+            throw new InvalidPasswordException();
         }
 
         List<String> authorities = user.getAuthorities().stream()

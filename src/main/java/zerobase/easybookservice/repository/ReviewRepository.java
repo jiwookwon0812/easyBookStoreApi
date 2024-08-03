@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     List<Review> findByStoreName(String storeName);
+    List<Review> findByEmail(String email);
+    List<Review> findByStoreNameAndEmail(String storeName, String email);
 }
