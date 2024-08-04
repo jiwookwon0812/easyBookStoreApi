@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import zerobase.easybookservice.dto.ReservationDto;
 import zerobase.easybookservice.service.ReservationService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -25,12 +26,22 @@ public class ReservationController {
         return reservationService.reserveStore(reservationDto);
     }
 
-    // 예약 조회
+    // 예약 조회 (예약 가능 여부는 service 코드 내에)
     @Operation(summary = "예약자 이름으로 예약 조회")
     @GetMapping("/search")
     @PreAuthorize("hasRole('USER')")
     public List<ReservationDto> searchReservations(@RequestParam String userName) {
         return reservationService.searchReservations(userName);
+    }
+
+    // (점장 권한) 예약 조회 -> 상점 이름으로 조회시 날짜별로 예약 리스트 뜨도록
+    // (날짜 별로 가능, 상점 이름만 입력 시 전체 예약 (날짜 순으로))
+    @Operation(summary = "점장 권한으로 날짜별 예약 리스트 조회")
+    @GetMapping("/admin/{storeName}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public List<ReservationDto> searchAdminReservations(@PathVariable String storeName,
+                                                        @RequestParam(required = false) LocalDate date) {
+        return reservationService.searchAdminReservations(storeName, date);
     }
 
     // 예약 삭제
@@ -51,19 +62,20 @@ public class ReservationController {
         reservationService.approveReservation(reservationNumber);
     }
 
-
     // 예약 거절
     @Operation(summary = "(점장 권한) 들어온 예약 거절")
-    @PutMapping("reject/{reservationNumber}")
+    @PutMapping("/reject/{reservationNumber}")
     @PreAuthorize("hasRole('ADMIN')")
     public void rejectReservation(@PathVariable String reservationNumber) {
         reservationService.rejectReservation(reservationNumber);
     }
 
-    // 방문 확인 api (예약 상태가 approve 인 상태일 때만 진행 가능) (고객이)
+    // 방문 확인 api (예약 상태가 approve 인 상태일 때만 진행 가능)
+    // 키오스크를 통해 진행되므로 USER 가 예약번호를 입력하도록
+    // 예약시간 10분전 이후면 자동으로 확인 불가하게끔 예외처리. 관리자에게 직접 문의하도록 안내
     @Operation(summary = "(점장 권한) 승인된 예약건에 한하여 예약자 방문 확인")
-    @PutMapping("visited/{reservationNumber}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/visited/{reservationNumber}")
+    @PreAuthorize("hasRole('USER')")
     public void confirmVisited(@PathVariable String reservationNumber,
                                @RequestParam String userName) {
         reservationService.confirmVisited(reservationNumber, userName);

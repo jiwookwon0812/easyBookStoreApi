@@ -7,7 +7,8 @@ import lombok.ToString;
 import zerobase.easybookservice.domain.constant.ReservationStatus;
 import zerobase.easybookservice.dto.ReservationDto;
 
-import java.util.UUID;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity(name = "Reservation")
 @Getter
@@ -21,8 +22,8 @@ public class Reservation {
     private String storeLocation; // 예약할 매장 위치
     private String userName; // 예약자 이름
     private String email; // 예약자 이메일
-    private String reservationDate; // 예약 날짜 (YYYY-MM-DD) 형식
-    private String reservationTime; // 예약 시간 (정각 마다 예약 받기로 가정)
+    private LocalDate reservationDate; // 예약 날짜 (YYYY-MM-DD) 형식
+    private LocalTime reservationTime; // 예약 시간 (분까지만)
     private String reservationNumber; // 랜덤으로 예약 번호
 
     @Enumerated(EnumType.STRING)

@@ -979,3 +979,257 @@
 03:31:15.892 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 03:31:15.892 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 03:31:15.906 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+04:20:22.988 [main] INFO  z.e.EasyBookServiceApplication - Starting EasyBookServiceApplication using Java 17.0.11 with PID 11820 (C:\Users\USER\intellij_project\EasyBookService\build\classes\java\main started by USER in C:\Users\USER\intellij_project\EasyBookService)
+04:20:22.990 [main] INFO  z.e.EasyBookServiceApplication - No active profile set, falling back to 1 default profile: "default"
+04:20:23.651 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+04:20:23.705 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 4 JPA repository interfaces.
+04:20:24.164 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+04:20:24.180 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+04:20:24.180 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+04:20:24.180 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+04:20:24.226 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+04:20:24.226 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1204 ms
+04:20:24.336 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+04:20:24.368 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+04:20:24.399 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+04:20:24.673 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+04:20:24.705 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+04:20:24.930 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9f48198
+04:20:24.942 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+04:20:24.974 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+04:20:25.861 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+04:20:25.949 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+04:20:26.425 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+04:20:26.450 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userService
+04:20:27.366 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+04:20:27.380 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+04:20:27.394 [main] INFO  z.e.EasyBookServiceApplication - Started EasyBookServiceApplication in 4.826 seconds (process running for 5.263)
+04:20:32.355 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+04:20:32.355 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+04:20:32.355 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+04:20:32.386 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+04:20:32.386 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+04:20:32.386 [http-nio-8080-exec-2] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+04:20:32.417 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+04:20:32.417 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+04:20:32.417 [http-nio-8080-exec-4] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+04:20:32.417 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+04:20:32.417 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+04:20:32.417 [http-nio-8080-exec-1] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+04:20:32.417 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+04:20:32.417 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+04:20:32.417 [http-nio-8080-exec-3] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+04:20:32.431 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+04:20:32.431 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+04:20:32.431 [http-nio-8080-exec-5] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+04:20:32.431 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+04:20:32.431 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+04:20:32.431 [http-nio-8080-exec-6] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+04:20:32.769 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+04:20:32.770 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+04:20:32.770 [http-nio-8080-exec-7] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+04:20:32.839 [http-nio-8080-exec-8] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+04:20:32.840 [http-nio-8080-exec-8] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+04:20:32.840 [http-nio-8080-exec-8] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+04:20:33.060 [http-nio-8080-exec-8] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 210 ms
+04:38:59.572 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+04:38:59.572 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+04:38:59.586 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:16:44.596 [main] INFO  z.e.EasyBookServiceApplication - Starting EasyBookServiceApplication using Java 17.0.11 with PID 2760 (C:\Users\USER\intellij_project\EasyBookService\build\classes\java\main started by USER in C:\Users\USER\intellij_project\EasyBookService)
+14:16:44.609 [main] INFO  z.e.EasyBookServiceApplication - No active profile set, falling back to 1 default profile: "default"
+14:16:45.990 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:16:46.084 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 4 JPA repository interfaces.
+14:16:46.917 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+14:16:46.935 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:16:46.937 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:16:46.937 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+14:16:47.049 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:16:47.050 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2384 ms
+14:16:47.282 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:16:47.382 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+14:16:47.430 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+14:16:47.915 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:16:47.956 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:16:48.403 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5615f82d
+14:16:48.406 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:16:48.479 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+14:16:49.952 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+14:16:50.089 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:16:50.851 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:16:50.886 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userService
+14:16:52.400 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:16:52.430 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+14:16:52.445 [main] INFO  z.e.EasyBookServiceApplication - Started EasyBookServiceApplication in 8.428 seconds (process running for 9.03)
+14:26:25.379 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:26:25.380 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:26:25.382 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+14:26:25.423 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+14:26:25.423 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+14:26:25.423 [http-nio-8080-exec-1] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+14:26:25.888 [http-nio-8080-exec-1] INFO  z.e.controller.AuthController - user login -> kjiwoo@google.com
+14:27:43.833 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:27:43.835 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:27:43.872 [http-nio-8080-exec-5] INFO  z.e.security.TokenProvider - Token is valid: true
+14:27:43.872 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:27:43.907 [http-nio-8080-exec-5] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:27:43.908 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:27:43.910 [http-nio-8080-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+14:27:50.239 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:27:50.239 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:27:50.242 [http-nio-8080-exec-10] INFO  z.e.security.TokenProvider - Token is valid: true
+14:27:50.242 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:27:50.255 [http-nio-8080-exec-10] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:27:50.255 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:27:58.329 [http-nio-8080-exec-8] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:27:58.329 [http-nio-8080-exec-8] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:27:58.332 [http-nio-8080-exec-8] INFO  z.e.security.TokenProvider - Token is valid: true
+14:27:58.332 [http-nio-8080-exec-8] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:27:58.342 [http-nio-8080-exec-8] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:27:58.343 [http-nio-8080-exec-8] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:28:04.668 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:28:04.668 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:28:04.671 [http-nio-8080-exec-6] INFO  z.e.security.TokenProvider - Token is valid: true
+14:28:04.672 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:28:04.679 [http-nio-8080-exec-6] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:28:04.679 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:28:18.819 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:28:18.819 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:28:18.822 [http-nio-8080-exec-2] INFO  z.e.security.TokenProvider - Token is valid: true
+14:28:18.822 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:28:18.830 [http-nio-8080-exec-2] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:28:18.831 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:28:25.040 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:28:25.040 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:28:25.042 [http-nio-8080-exec-1] INFO  z.e.security.TokenProvider - Token is valid: true
+14:28:25.043 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:28:25.050 [http-nio-8080-exec-1] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:28:25.051 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:28:52.079 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:28:52.080 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:28:52.083 [http-nio-8080-exec-3] INFO  z.e.security.TokenProvider - Token is valid: true
+14:28:52.083 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:28:52.091 [http-nio-8080-exec-3] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:28:52.091 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:29:23.881 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+14:29:23.881 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+14:29:23.881 [http-nio-8080-exec-4] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+14:29:23.882 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+14:29:33.107 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+14:29:33.107 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+14:29:33.107 [http-nio-8080-exec-5] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+14:29:33.249 [http-nio-8080-exec-5] INFO  z.e.controller.AuthController - user login -> kwonjiwoo@naver.com
+14:30:08.798 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:30:08.799 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:30:08.801 [http-nio-8080-exec-10] INFO  z.e.security.TokenProvider - Token is valid: true
+14:30:08.801 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:30:08.812 [http-nio-8080-exec-10] INFO  z.e.security.TokenProvider - Authentication user: kwonjiwoo@naver.com
+14:30:08.813 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=1, username=kwonjiwoo@naver.com, email=kwonjiwoo@naver.com, password=$2a$10$PvgZ2115q2Nm4uwUkjr4w.09DgUIAjxNVfjA8uqXof9Cs1l/atr5K, authorities=[ROLE_ADMIN]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]
+14:40:49.101 [http-nio-8080-exec-9] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:40:49.102 [http-nio-8080-exec-9] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:40:49.105 [http-nio-8080-exec-9] INFO  z.e.security.TokenProvider - Token is valid: true
+14:40:49.105 [http-nio-8080-exec-9] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:40:49.114 [http-nio-8080-exec-9] INFO  z.e.security.TokenProvider - Authentication user: kwonjiwoo@naver.com
+14:40:49.114 [http-nio-8080-exec-9] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=1, username=kwonjiwoo@naver.com, email=kwonjiwoo@naver.com, password=$2a$10$PvgZ2115q2Nm4uwUkjr4w.09DgUIAjxNVfjA8uqXof9Cs1l/atr5K, authorities=[ROLE_ADMIN]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]
+14:41:05.120 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:41:05.120 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:41:05.123 [http-nio-8080-exec-6] INFO  z.e.security.TokenProvider - Token is valid: true
+14:41:05.124 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:41:05.135 [http-nio-8080-exec-6] INFO  z.e.security.TokenProvider - Authentication user: kwonjiwoo@naver.com
+14:41:05.136 [http-nio-8080-exec-6] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=1, username=kwonjiwoo@naver.com, email=kwonjiwoo@naver.com, password=$2a$10$PvgZ2115q2Nm4uwUkjr4w.09DgUIAjxNVfjA8uqXof9Cs1l/atr5K, authorities=[ROLE_ADMIN]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]
+14:41:54.402 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:41:54.403 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:41:54.406 [http-nio-8080-exec-2] INFO  z.e.security.TokenProvider - Token is valid: true
+14:41:54.406 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:41:54.412 [http-nio-8080-exec-2] INFO  z.e.security.TokenProvider - Authentication user: kwonjiwoo@naver.com
+14:41:54.413 [http-nio-8080-exec-2] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=1, username=kwonjiwoo@naver.com, email=kwonjiwoo@naver.com, password=$2a$10$PvgZ2115q2Nm4uwUkjr4w.09DgUIAjxNVfjA8uqXof9Cs1l/atr5K, authorities=[ROLE_ADMIN]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]
+14:42:01.937 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:42:01.937 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:42:01.939 [http-nio-8080-exec-1] INFO  z.e.security.TokenProvider - Token is valid: true
+14:42:01.939 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:42:01.945 [http-nio-8080-exec-1] INFO  z.e.security.TokenProvider - Authentication user: kwonjiwoo@naver.com
+14:42:01.945 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=1, username=kwonjiwoo@naver.com, email=kwonjiwoo@naver.com, password=$2a$10$PvgZ2115q2Nm4uwUkjr4w.09DgUIAjxNVfjA8uqXof9Cs1l/atr5K, authorities=[ROLE_ADMIN]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]
+14:42:11.632 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:42:11.632 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrd29uaml3b29AbmF2ZXIuY29tIiwicm9sZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE3MjI3NDkzNzMsImV4cCI6MTcyMjc2NzM3M30.Xzn7peNEy0qwnXWxOpbaXEsHVDVMGPb4-AROjFq0xWk_18WyhkyLao7pwLVpVpBRdqyzkEYaskkrwn2Kydz-lA
+14:42:11.635 [http-nio-8080-exec-3] INFO  z.e.security.TokenProvider - Token is valid: true
+14:42:11.635 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:42:11.641 [http-nio-8080-exec-3] INFO  z.e.security.TokenProvider - Authentication user: kwonjiwoo@naver.com
+14:42:11.641 [http-nio-8080-exec-3] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=1, username=kwonjiwoo@naver.com, email=kwonjiwoo@naver.com, password=$2a$10$PvgZ2115q2Nm4uwUkjr4w.09DgUIAjxNVfjA8uqXof9Cs1l/atr5K, authorities=[ROLE_ADMIN]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_ADMIN]]
+14:42:48.814 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:42:48.815 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:42:48.816 [http-nio-8080-exec-4] INFO  z.e.security.TokenProvider - Token is valid: true
+14:42:48.816 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:42:48.823 [http-nio-8080-exec-4] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:42:48.823 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:43:12.304 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:43:12.305 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:43:12.307 [http-nio-8080-exec-5] INFO  z.e.security.TokenProvider - Token is valid: true
+14:43:12.307 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:43:12.317 [http-nio-8080-exec-5] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:43:12.317 [http-nio-8080-exec-5] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:43:45.955 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:43:45.956 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:43:45.960 [http-nio-8080-exec-10] INFO  z.e.security.TokenProvider - Token is valid: true
+14:43:45.960 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:43:45.968 [http-nio-8080-exec-10] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:43:45.969 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:43:45.972 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'userName' for method parameter type String is not present]
+14:43:52.820 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:43:52.820 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NDkxODUsImV4cCI6MTcyMjc2NzE4NX0.nskrunT5fmwJzNhBJiL8I28igZ7vKezwgH9lGvBDL4k3X1aGj40ac3aATiqVcU53wTUJHg0F_NBSd6LnRqvsIA
+14:43:52.822 [http-nio-8080-exec-7] INFO  z.e.security.TokenProvider - Token is valid: true
+14:43:52.822 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:43:52.828 [http-nio-8080-exec-7] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:43:52.829 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:44:09.551 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:44:09.555 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:44:09.575 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:44:14.538 [main] INFO  z.e.EasyBookServiceApplication - Starting EasyBookServiceApplication using Java 17.0.11 with PID 8156 (C:\Users\USER\intellij_project\EasyBookService\build\classes\java\main started by USER in C:\Users\USER\intellij_project\EasyBookService)
+14:44:14.542 [main] INFO  z.e.EasyBookServiceApplication - No active profile set, falling back to 1 default profile: "default"
+14:44:15.608 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:44:15.701 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 4 JPA repository interfaces.
+14:44:16.321 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+14:44:16.333 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:44:16.334 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+14:44:16.334 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.25]
+14:44:16.424 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:44:16.424 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1823 ms
+14:44:16.607 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+14:44:16.678 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+14:44:16.728 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+14:44:17.170 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:44:17.205 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:44:17.571 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6cb194f5
+14:44:17.573 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:44:17.650 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+14:44:18.854 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+14:44:18.923 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:44:19.544 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:44:19.573 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userService
+14:44:20.676 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:44:20.697 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+14:44:20.708 [main] INFO  z.e.EasyBookServiceApplication - Started EasyBookServiceApplication in 6.769 seconds (process running for 7.411)
+14:44:39.359 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:44:39.360 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+14:44:39.362 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+14:44:39.431 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: null
+14:44:39.431 [http-nio-8080-exec-1] INFO  z.e.security.JwtAuthenticationFilter - Token from request: null
+14:44:39.431 [http-nio-8080-exec-1] WARN  z.e.security.JwtAuthenticationFilter - Invalid token
+14:44:40.092 [http-nio-8080-exec-1] INFO  z.e.controller.AuthController - user login -> kjiwoo@google.com
+14:44:54.845 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NTAyODAsImV4cCI6MTcyMjc2ODI4MH0.b4M-2owABLfBvX8ePCyB8uJ52H7uD650MSTJoojlBvWthL6SMhH5wubuA8L1tH9xjLCnznBdsYROh3B9Hi1Alw
+14:44:54.845 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NTAyODAsImV4cCI6MTcyMjc2ODI4MH0.b4M-2owABLfBvX8ePCyB8uJ52H7uD650MSTJoojlBvWthL6SMhH5wubuA8L1tH9xjLCnznBdsYROh3B9Hi1Alw
+14:44:54.886 [http-nio-8080-exec-4] INFO  z.e.security.TokenProvider - Token is valid: true
+14:44:54.886 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:44:54.920 [http-nio-8080-exec-4] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:44:54.921 [http-nio-8080-exec-4] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:44:59.332 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NTAyODAsImV4cCI6MTcyMjc2ODI4MH0.b4M-2owABLfBvX8ePCyB8uJ52H7uD650MSTJoojlBvWthL6SMhH5wubuA8L1tH9xjLCnznBdsYROh3B9Hi1Alw
+14:44:59.332 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NTAyODAsImV4cCI6MTcyMjc2ODI4MH0.b4M-2owABLfBvX8ePCyB8uJ52H7uD650MSTJoojlBvWthL6SMhH5wubuA8L1tH9xjLCnznBdsYROh3B9Hi1Alw
+14:44:59.334 [http-nio-8080-exec-10] INFO  z.e.security.TokenProvider - Token is valid: true
+14:44:59.334 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:44:59.344 [http-nio-8080-exec-10] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:44:59.346 [http-nio-8080-exec-10] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
+14:44:59.355 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'userName' for method parameter type String is not present]
+14:45:36.818 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Token from request header: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NTAyODAsImV4cCI6MTcyMjc2ODI4MH0.b4M-2owABLfBvX8ePCyB8uJ52H7uD650MSTJoojlBvWthL6SMhH5wubuA8L1tH9xjLCnznBdsYROh3B9Hi1Alw
+14:45:36.819 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Token from request: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJraml3b29AZ29vZ2xlLmNvbSIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE3MjI3NTAyODAsImV4cCI6MTcyMjc2ODI4MH0.b4M-2owABLfBvX8ePCyB8uJ52H7uD650MSTJoojlBvWthL6SMhH5wubuA8L1tH9xjLCnznBdsYROh3B9Hi1Alw
+14:45:36.822 [http-nio-8080-exec-7] INFO  z.e.security.TokenProvider - Token is valid: true
+14:45:36.822 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Token is valid
+14:45:36.831 [http-nio-8080-exec-7] INFO  z.e.security.TokenProvider - Authentication user: kjiwoo@google.com
+14:45:36.832 [http-nio-8080-exec-7] INFO  z.e.security.JwtAuthenticationFilter - Authentication: UsernamePasswordAuthenticationToken [Principal=User(id=4, username=kjiwoo@google.com, email=kjiwoo@google.com, password=$2a$10$aJc/M7vqgpQKZJ/o/5Wf5.MBjzSb7l3SlNDFbg5r/xd85JQR43PDO, authorities=[ROLE_USER]), Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]
