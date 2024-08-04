@@ -17,11 +17,11 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String reservationNumber;
-    private String userName;
-    private String email;
-    private String storeName;
-    private String reviewText;
+    private String reservationNumber; // 예약 번호
+    private String userName; // 예약자 이름
+    private String email; // 이메일
+    private String storeName; // 상점 이름
+    private String reviewText; // 리뷰 내용
     private int rating; // 별점
 
     public Review(ReviewDto reviewDto, String email) {

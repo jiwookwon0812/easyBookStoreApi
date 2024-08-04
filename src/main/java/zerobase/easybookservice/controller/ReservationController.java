@@ -21,7 +21,7 @@ public class ReservationController {
     @Operation(summary = "상점 예약")
     @PostMapping
     @PreAuthorize("hasRole('USER')")
-    public ReservationDto reserveStore(@Parameter(description = "예약 날짜 형식 : YYYY-MM-DD", example = "2024-08-12", required = true)
+    public ReservationDto reserveStore(@Parameter(description = "예약 날짜 형식 : YYYY-MM-DD / 시간 형식 : HH:MM", example = "2024-08-12, 14:30", required = true)
             @RequestBody ReservationDto reservationDto) {
         return reservationService.reserveStore(reservationDto);
     }

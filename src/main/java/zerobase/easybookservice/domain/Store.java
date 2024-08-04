@@ -17,9 +17,9 @@ public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String location;
-    private String description;
+    private String name; // 상점 이름
+    private String location; // 상점 위치
+    private String description; // 상점 세부 정보
 
     public Store(StoreDto storeDto) {
         this.name = storeDto.getName();

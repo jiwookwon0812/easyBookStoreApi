@@ -22,16 +22,16 @@ public class User implements UserDetails {
     private Long id;
 
     @Column(nullable = false)
-    private String username;
+    private String username; // 회원 이름
 
     @Column(nullable = false, unique = true)
-    private String email;
+    private String email; // 회원 이메일 (고유값)
 
     @Column(nullable = false)
-    private String password;
+    private String password; // 회원 비밀번호
 
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<String> authorities;
+    private List<String> authorities; // 회원 권한
 
     public User(String username, String email, String password, List<String> authorities) {
         this.username = username;
