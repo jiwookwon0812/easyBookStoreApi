@@ -10,8 +10,8 @@ import zerobase.easybookservice.exception.impl.NoStoreException;
 import zerobase.easybookservice.repository.StoreRepository;
 
 
+import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -41,46 +41,24 @@ public class StoreService {
     // 상점 조회 (이름으로, 이름 없으면 전체 조회)
     @Transactional(readOnly = true)
     public List<StoreDto> searchStores(String name, String location) {
-        List<StoreDto> storeDtos;
         List<Store> stores;
+
         if (name == null && location == null) { // 전체 상점 조회
             stores = storeRepository.findAll();
-            if (stores.isEmpty()) {
-                throw new NoStoreException();
-            }
-            storeDtos = stores.stream()
-                    .map(e -> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))
-                    .toList();
-            return  storeDtos;
-        } else if (name == null && location != null) { // 이름 없고 위치만 입력 했을 때
+        } else if (name == null) { // 이름이 없고 위치만 입력한 경우
             stores = storeRepository.findAllByLocation(location);
-            if (stores.isEmpty()) {
-                throw new NoStoreException();
-            }
-            storeDtos = stores.stream()
-                    .map(e -> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))
-                    .toList();
-            return storeDtos;
-        } else if (name != null && location == null) { // 이름만 입력
+        } else if (location == null) { // 이름만 입력한 경우
             stores = storeRepository.findAllByName(name);
-            if (stores.isEmpty()) {
-                throw new NoStoreException();
-            }
-            storeDtos = stores.stream()
-                    .map(e -> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))
-                    .toList();
-            return storeDtos;
-        } else { // 이름, 위치 모두 입력
-            Optional<Store> store = storeRepository.findByNameAndLocation(name, location);
-            if (store.isEmpty()) {
-                throw new NoStoreException();
-            }
-            storeDtos = store.stream()
-                    .map(e-> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))
-                    .toList();
-            return storeDtos;
+        } else { // 이름과 위치 모두 입력한 경우
+            stores = storeRepository.findByNameAndLocation(name, location)
+                    .map(Collections::singletonList) // Optional을 List로 변환
+                    .orElse(Collections.emptyList());
         }
-    }
 
+        // 상점이 없으면 빈 목록 반환
+        return stores.stream()
+                .map(e -> new StoreDto(e.getName(), e.getLocation(), e.getDescription()))
+                .toList();
+    }
 
 }
